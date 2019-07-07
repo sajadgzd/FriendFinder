@@ -230,7 +230,7 @@
                 </div>
                 <div class="modal-body">
                     <h2 id="match-name"></h2>
-                    <img id="match-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
+                    <img id="match-img" src="" alt="">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -267,7 +267,7 @@
                 if (isValid()) {
                     var newPerson = {
                         name: $("#name").val().trim(),
-                        photo: $("#photo").vl().trim(),
+                        photo: $("#photo").val().trim(),
                         scores: [
                             $("#q1").val(),
                             $("#q2").val(),
@@ -284,16 +284,15 @@
                     }
                     $.post("/api/friends", newPerson).then(
                         function(data) {
-                            console.log("NEW PERSON ADDED :::: ", data);
+                            console.log("NEW PERSON ADDED :::: ", data.name);
                         }
                     )
-
-
 
                 }
 
             })
         }
+        postMorePeople();
     </script>
 </body>
 
