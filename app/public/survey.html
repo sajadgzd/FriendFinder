@@ -214,7 +214,7 @@
         <hr>
         <footer class="footer">
             <div class="container">
-                <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/afhaque/friendfinder">GitHub Repo</a></p>
+                <p><a href="/api/friends" target="_blank">API Friends List</a> | <a href="https://github.com/sajadgzd/FriendFinder" target="_blank">GitHub Repo</a></p>
             </div>
         </footer>
 
@@ -285,6 +285,12 @@
                     $.post("/api/friends", newPerson).then(
                         function(data) {
                             console.log("NEW PERSON ADDED :::: ", data);
+
+                            // Grab the result from the AJAX post to display the best match retrieved from the server side
+                            $("#match-name").text(data.name);
+                            $("#match-img").attr("src", data.photo);
+                            // Show the modal with the best match
+                            $("#results-modal").modal("toggle");
                         }
                     );
                 } else {
