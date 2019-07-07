@@ -10,9 +10,10 @@ module.exports = function(app) {
 
         friendsData.push(req.body);
         var diffArray = [];
+        var totalDifference = 0;
 
         for (let j = 0; j < friendsData.length - 1; j++) {
-            var totalDifference = 0;
+            totalDifference = 0;
             for (let i = 0; i < 10; i++) {
                 totalDifference += Math.abs(parseInt(req.body.scores[i]) - parseInt(friendsData[j].scores[i]))
             }
