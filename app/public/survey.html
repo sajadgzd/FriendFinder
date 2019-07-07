@@ -284,10 +284,11 @@
                     }
                     $.post("/api/friends", newPerson).then(
                         function(data) {
-                            console.log("NEW PERSON ADDED :::: ", data.name);
+                            console.log("NEW PERSON ADDED :::: ", data);
                         }
-                    )
-
+                    );
+                } else {
+                    console.log("INVALID FORM INPUT. PLEASE FILL OUT ALL SECTIONS CORRECTLY.")
                 }
 
             })

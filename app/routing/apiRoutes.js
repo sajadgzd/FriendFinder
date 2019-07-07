@@ -1,16 +1,33 @@
 var friendsData = require("../data/friends.js");
 
 module.exports = function(app) {
-    app.get("/api/friends", function(req, res) {
-        res.json(friendsData);
-    })
 
     app.get("/api/friends", function(req, res) {
         res.json(friendsData);
     })
 
     app.post("/api/friends", function(req, res) {
+
         friendsData.push(req.body);
-        res.json(req.body)
+        var diffArray = [];
+
+        for (let j = 0; j < friendsData.length - 1; j++) {
+            var totalDifference = 0;
+            for (let i = 0; i < 10; i++) {
+                totalDifference += Math.abs(parseInt(req.body.scores[i]) - parseInt(friendsData[j].scores[i]))
+            }
+            diffArray.push(totalDifference);
+        }
+        var min = diffArray[0];
+        for (let i = 1; i < diffArray.length; i++) {
+            if (diffArray[i] <= min) {
+                min = diffArray[i];
+            }
+        }
+
+        console.log(diffArray);
+        res.json(min);
+
     })
+
 }
