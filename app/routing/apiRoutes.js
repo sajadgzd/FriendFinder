@@ -19,15 +19,17 @@ module.exports = function(app) {
             }
             diffArray.push(totalDifference);
         }
+        var matchIndex = 0;
         var min = diffArray[0];
         for (let i = 1; i < diffArray.length; i++) {
             if (diffArray[i] <= min) {
                 min = diffArray[i];
+                matchIndex = i;
             }
         }
 
         console.log(diffArray);
-        res.json(friendsData[min]);
+        res.json(friendsData[matchIndex]);
 
     })
 
