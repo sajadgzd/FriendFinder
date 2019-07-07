@@ -27,7 +27,7 @@ module.exports = function(app) {
         }
 
         console.log(diffArray);
-        res.json(min);
+        res.json(friendsData[min]);
 
     })
 
