@@ -8,5 +8,5 @@ Express is used to handle routing.
 
 ### Demo
 
-You can view the deployed app here on heroku:
-https://tranquil-bastion-97930.herokuapp.com/
+You may view the deployed app:
+[Live Website](https://tranquil-bastion-97930.herokuapp.com/)
