@@ -182,10 +182,10 @@
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
+                        <h2 class="modal-title"><strong>Here is your Best Match</strong></h2>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
-                    </button>
-                        <h2 class="modal-title"><strong>Here is your Best Match</strong></h2>
+                        </button>
                     </div>
                     <div class="modal-body">
                         <h2 id="match-name"></h2>
@@ -256,7 +256,21 @@
                     );
                 } else {
                     console.log("INVALID FORM INPUT. PLEASE FILL OUT ALL SECTIONS CORRECTLY.")
+                    alert("INVALID FORM INPUT. PLEASE FILL OUT ALL SECTIONS CORRECTLY.");
                 }
+
+                $("#name").val("");
+                $("#photo").val("");
+                // $("#q1").val("");
+                // $("#q2").val("");
+                // $("#q3").val("");
+                // $("#q4").val("");
+                // $("#q5").val("");
+                // $("#q6").val("");
+                // $("#q7").val("");
+                // $("#q8").val("");
+                // $("#q9").val("");
+                // $("#q10").val("");
 
             })
 
