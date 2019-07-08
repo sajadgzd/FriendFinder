@@ -175,25 +175,28 @@
             </div>
         </footer>
 
-    </div>
-    <div id="results-modal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
 
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                    <h2 class="modal-title"><strong>Best Match</strong></h2>
+        <div id="results-modal" class="modal fade" style="opacity: 10">
+            <div class="modal-dialog" role="document">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                    </button>
+                        <h2 class="modal-title"><strong>Here is your Best Match</strong></h2>
+                    </div>
+                    <div class="modal-body">
+                        <h2 id="match-name"></h2>
+                        <img id="match-img" src="" alt="">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
-                <div class="modal-body">
-                    <h2 id="match-name"></h2>
-                    <img id="match-img" src="" alt="">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
+
             </div>
-
         </div>
     </div>
 
@@ -255,6 +258,10 @@
                     console.log("INVALID FORM INPUT. PLEASE FILL OUT ALL SECTIONS CORRECTLY.")
                 }
 
+            })
+
+            $(".close").on("click", function(event) {
+                $("#results-modal").modal('hide')
             })
 
 
